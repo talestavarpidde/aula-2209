@@ -7,10 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+        if (isset($_GET['erro'])) {
+            $email = '';
+            if ($_GET['erro'] == "login") {
+                $email = $_GET['email'];
+                echo "<p class='erro'>Login e/ou senha incorretos!</p>";
+            }
+            if ($_GET['erro'] == "logado") {
+                echo "<p class='erro'>Você precisa estar logado!</p>";
+            }
+        }
+        else {
+            $email = "";
+        }
+?>
 <form action="verificar_login.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="<?php echo $email; ?>">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
