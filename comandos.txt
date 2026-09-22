@@ -1,0 +1,11 @@
+//listar
+docker ps -a
+
+//parar
+docker kill NOME
+
+//remover
+docker rm NOME
+
+//executar
+docker compose up --build
