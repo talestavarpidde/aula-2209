@@ -16,7 +16,6 @@
 
     <table>
         <tr>
-            <td>idpostagem</td>
             <td>conteudo</td>
             <td>data e hora</td>
             <td>usuario</td>
@@ -28,22 +27,23 @@
         require_once "conexao.php";
         
         //$sql = "SELECT * FROM postagem";
-        $sql = "SELECT * FROM postagem";
-        
+        $sql = "SELECT postagem.texto, postagem.data_hora, usuario.username
+        FROM postagem
+        INNER JOIN usuario
+        ON postagem.idusuario = usuario.idusuario;";
+
         $resultados = mysqli_query($conexao, $sql);
         
         //quebra a variável $resultados em linhas (vetores/array)
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $linha['idpostagem'];
-            $titulo = $linha['texto'];
-            $conteudo = $linha['data_hora'];
-            $autor = $linha['idusuario'];
+            $texto = $linha['texto'];
+            $data_hora = $linha['data_hora'];
+            $usuario = $linha['username'];
 
             echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$titulo</td>";
-                echo "<td>$conteudo</td>";
-                echo "<td>$autor</td>";
+                echo "<td>$texto</td>";
+                echo "<td>$data_hora</td>";
+                echo "<td>$usuario</td>";
                 //echo "<td><a href='excluir_postagem.php?id=$id'><img src='../imagens/lixeira.png'></a></td>";
                 //echo "<td><a href='excluir_postagem.php?id=$id'>excluir</a></td>";
                 //echo "<td><a href='cad_postagem.php?id=$id'>Editar</a></td>";
@@ -53,5 +53,6 @@
             
             ?>
     </table>
+    <a href="principal.php">Voltar</a>
 </body>
 </html>
