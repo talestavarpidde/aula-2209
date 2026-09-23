@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="cad_postagem.php">Fazer uma postagem</a>
+    <a href="cad_postagem.php">Fazer uma postagem</a> <br>
+    <a href="listar_postagem.php">Listar postagens</a> <br>
 </body>
 </html>
