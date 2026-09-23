@@ -1,19 +1,17 @@
-
 <?php
-session_start();
 require_once "conexao.php";
 
 $texto = $_POST['texto'];
-$nomePostador = $_POST['nomePostador'];
+$idusuario = $_POST['idusuario'];
 
 
 $_SESSION['texto'] = $texto;
 
-$_SESSION['nomePostador'] = $nomePostador;
+$_SESSION['idusuario'] = $idusuario;
 
-    $sql = "INSERT INTO postagem (texto, nomePostador) VALUES (?, ?)";
+    $sql = "INSERT INTO postagem (texto, idusuario) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($comando, 'ss', $texto, $nomePostador);
+    mysqli_stmt_bind_param($comando, 'ss', $texto, $idusuario);
 
 
 mysqli_stmt_execute($comando);
