@@ -1,17 +1,3 @@
-<?php
-
-    echo "<h1>Cadastro de usuários</h1>";
-    $id = 0;
-    $username = "";
-    $nome = "";
-    $email = "";
-    $senha = "";
-    $foto = "";
-
-
-//
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +12,12 @@
 
 <body>
     <div>
-        <form action="salvarUsuario.php?id=<?php echo $id; ?>" method="POST">
-            <p>Username</p><input value="<?php echo $username; ?>" type="text" name="username">
-            <p>Nome</p><input value="<?php echo $nome; ?>" type="text" name="nome">
-            <p>Email</p><input value="<?php echo $email; ?>" type="email" name="email">
-            <p>Senha</p><input value="<?php echo $senha; ?>" type="password" name="senha">
-            <p>Foto</p><input value="<?php echo $foto; ?>" type="text" name="foto">
+        <form action="salvarUsuario.php" method="POST">
+            <p>Username</p><input  type="text" name="username">
+            <p>Nome</p><input  type="text" name="nome">
+            <p>Email</p><input  type="email" name="email">
+            <p>Senha</p><input  type="password" name="senha">
+            <p>Foto</p><input  type="text" name="foto">
 
             <input type="submit" value="Salvar">
         </select>            
