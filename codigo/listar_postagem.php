@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h2>Lista de postagens</h2>
+    <h2>For You</h2>
 
     <table>
         <tr>
@@ -26,7 +26,6 @@
         <?php
         require_once "conexao.php";
         
-        //$sql = "SELECT * FROM postagem";
         $sql = "SELECT postagem.idpostagem, postagem.texto, postagem.data_hora, usuario.username
         FROM postagem
         INNER JOIN usuario
