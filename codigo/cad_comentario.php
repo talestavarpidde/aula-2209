@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Novo Comentário</title>
 </head>
 <body>
-    <form action="salvarComentario.php" method="POST">
+    <form action="salvar_Comentario.php" method="POST">
         Texto: <br>
-        <input  type="text" name="texto"> <br>
+        <input type="text" name="texto" required> <br><br>
         
         Postagem:<br>
-        <select name="idpostagem">
+        <select name="idpostagem" required>
         <?php
             require_once "conexao.php";
 
-            $sql = "SELECT * FROM postagem";
-
+            $sql = "SELECT idpostagem, texto FROM postagem";
             $resultados = mysqli_query($conexao, $sql);
+            
             while ($linha = mysqli_fetch_array($resultados)) {
                 $idpostagem = $linha['idpostagem'];
                 $texto = $linha['texto'];
@@ -25,16 +25,14 @@
                 echo "<option value='$idpostagem'>$texto</option>";
             }
         ?>
-        </select><br>
+        </select><br><br>
 
-        usuário que comentou:<br>
-        <select name="idusuario">
+        Usuário que comentou:<br>
+        <select name="idusuario" required>
         <?php
-            require_once "conexao.php";
-
-            $sql = "SELECT * FROM usuario";
-
+            $sql = "SELECT idusuario, nome FROM usuario";
             $resultados = mysqli_query($conexao, $sql);
+            
             while ($linha = mysqli_fetch_array($resultados)) {
                 $idusuario = $linha['idusuario'];
                 $nome = $linha['nome'];
@@ -42,7 +40,8 @@
                 echo "<option value='$idusuario'>$nome</option>";
             }
         ?>
-        </select><br>
+        </select><br><br>
+        
         <input type="submit" value="Salvar">
     </form>
 </body>
