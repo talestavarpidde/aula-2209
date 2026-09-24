@@ -35,6 +35,6 @@
 </head>
 <body>
     <iframe id="menu-frame" src="menu.html"></iframe>
-    <iframe id="conteudo-frame" src="listar_postagem.php"></iframe>
+    <iframe id="conteudo-frame" src="listar_postagem.php" name="conteudo-frame"></iframe>
 </body>
 </html>

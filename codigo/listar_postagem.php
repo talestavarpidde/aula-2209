@@ -50,6 +50,5 @@
         }
         ?>
     </table>
-    <a href="principal.php">Voltar</a>
 </body>
 </html>
