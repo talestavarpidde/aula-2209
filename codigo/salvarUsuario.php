@@ -22,6 +22,6 @@ mysqli_stmt_execute($comando);
 
 mysqli_stmt_close($comando);
 
-header("Location: index.php");
+header("Location: listar_postagem.php");
 exit();
 ?>

@@ -18,6 +18,6 @@ mysqli_stmt_execute($comando);
 
 mysqli_stmt_close($comando);
 
-header("Location: principal.php");
+header("Location: listar_postagem.php");
 exit();
 ?>
