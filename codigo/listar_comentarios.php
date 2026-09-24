@@ -35,7 +35,7 @@
         $resultados = mysqli_query($conexao, $sql);
         
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $linha['idcomentario'];
+            $idcomentario = $linha['idcomentario'];
             $texto = $linha['comentario'];
             $postagem = $linha['conteudo_postagem']; // Pega o texto da postagem
             $usuario = $linha['username'];
@@ -44,7 +44,7 @@
                 echo "<td>$texto</td>";
                 echo "<td>$postagem</td>"; // Exibe o texto da postagem em vez do ID
                 echo "<td>$usuario</td>";
-                echo "<td><a href='excluir_comentario.php?id=$id'>excluir</a></td>";
+                echo "<td><a href='excluir_comentario.php?id=$idcomentario'>excluir</a></td>";
             echo "</tr>";
         }
         ?>
